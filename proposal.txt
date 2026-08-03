@@ -1,0 +1,55 @@
+TOPIC: WORKOUT LOG
+
+PROPOSAL:
+Our group will create a Workout Log web application using Node.js, Express, MongoDB, and Pug.
+The application will allow users to create, view, edit, and delete workout sessions. 
+Each workout session will store the exercise name, number of sets, repetitions, weight used, workout date, and optional notes. 
+The goal is to provide a simple interface for recording and managing workout history while demonstrating complete CRUD functionality.
+
+RESOURCE: every record is a completed workout session
+
+FIELDS:
+- exercise
+- sets
+- reps
+- weight
+- date
+- notes
+
+CRUD OPERATIONS:
+CREATE: user clicks add workout to fill out exercise, sets, reps, weight, date, notes
+READ: workout history
+UPDATE: user can edit values from previous workouts 
+DELETE: user can delete a workout session log 
+
+VALIDATION:
+- exercise cannot be blank
+- sets must be at least 1
+- reps must be at least 1
+- weight cannot be negative
+- date cannot be blank
+- notes optional
+
+PAGES:
+- home
+- workout history
+- workout details
+- add workout
+- edit workout
+- 404
+
+LIKELY ROUTES:
+GET    /workouts
+GET    /workouts/new
+
+POST   /workouts
+
+GET    /workouts/:id
+
+GET    /workouts/:id/edit
+
+PUT    /workouts/:id
+
+DELETE /workouts/:id
+
+
