@@ -51,5 +51,3 @@ GET    /workouts/:id/edit
 PUT    /workouts/:id
 
 DELETE /workouts/:id
-
-
