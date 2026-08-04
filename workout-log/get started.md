@@ -12,7 +12,7 @@
 `npm install`
 
 4. Create an .env file these variables
-`touch env`
+`touch .env`
 ```
 PORT=3000
 MONGO_URI=mongodb+srv://muhi0029_db_user:NB2fg8FW5q8njPDM@workoutlogcluster.vsb4cre.mongodb.net/?appName=WorkoutLogCluster
