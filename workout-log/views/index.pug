@@ -6,3 +6,32 @@ html(lang="en")
         title Workout Log
     body 
         h1 Workout Log Homepage
+        a.action-button(href="/workouts/new") Add Workout
+
+        if workouts && workouts.length
+            table
+                thead
+                    tr
+                        th Exercise
+                        th Sets
+                        th Reps
+                        th Weight
+                        th Date
+                        th Notes
+                        th Actions
+                tbody
+                    each workout in workouts
+                        tr
+                            td= workout.exercise
+                            td= workout.sets
+                            td= workout.reps
+                            td= workout.weight
+                            td= workout.date.toLocaleDateString()
+                            td= workout.notes
+                            td.actions
+                                a.action-button(href=`/workouts/${workout._id}`) View
+                                a.action-button(href=`/workouts/${workout._id}/edit`) Edit
+                                form.action-form(action=`/workouts/${workout._id}?_method=DELETE` method="POST" onsubmit="return confirm('Delete this workout?')")
+                                    button.action-button(type="submit") Delete
+        else
+            p No workouts logged.

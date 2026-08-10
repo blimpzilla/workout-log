@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles.css")
+        title Workout Details
+
+    body
+        h1= workout.exercise
+        p Sets: #{workout.sets}
+        p Reps: #{workout.reps}
+        p Weight: #{workout.weight} lbs
+        p Date: #{workout.date.toLocaleDateString()}
+        p Notes: #{workout.notes}
+
+        a.action-button(href=`/workouts/${workout._id}/edit`) Edit
+        a.action-button(href="/workouts") Back
+
+        form.action-form(action=`/workouts/${workout._id}?_method=DELETE` method="POST" onsubmit="return confirm('Delete this workout?')")
+            button.action-button(type="submit") Delete

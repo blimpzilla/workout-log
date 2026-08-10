@@ -3,3 +3,85 @@
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: lightskyblue;
+    margin-right: 10px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    max-width: 500px;
+}
+
+input,
+textarea,
+button {
+    padding: 8px;
+    font: inherit;
+}
+
+button {
+    width: fit-content;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid aliceblue;
+    text-align: left;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.action-form {
+    display: inline;
+}
+
+.action-button {
+    display: inline-block;
+    width: auto;
+    margin: 2px;
+    padding: 6px 10px;
+    border: 1px solid aliceblue;
+    background: transparent;
+    color: lightskyblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-page {
+    text-align: center;
+}
+
+.form-page form {
+    margin: 0 auto;
+}
+
+.form-page label {
+    text-align: left;
+}
+
+.form-page .action-button {
+    justify-self: center;
+}

@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles.css")
+        title Edit Workout
+
+    body
+        h1 Edit Workout
+
+        form(action=`/workouts/${workout._id}?_method=PUT` method="POST")
+            label(for="exercise") Exercise
+            input(type="text" id="exercise" name="exercise" required value=workout.exercise)
+
+            label(for="sets") Sets
+            input(type="number" id="sets" name="sets" min="1" required value=workout.sets)
+
+            label(for="reps") Reps
+            input(type="number" id="reps" name="reps" min="1" required value=workout.reps)
+
+            label(for="weight") Weight
+            input(type="number" id="weight" name="weight" min="0" value=workout.weight)
+
+            label(for="date") Date
+            input(type="date" id="date" name="date" required value=workout.date.toISOString().split("T")[0])
+
+            label(for="notes") Notes
+            textarea(id="notes" name="notes")= workout.notes
+
+            button.action-button(type="submit") Update Workout
+
+        a.action-button(href=`/workouts/${workout._id}`) Back

@@ -22,8 +22,7 @@ const workoutSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        required: [true, 'Date cannot be blank'],
-        default: Date.now
+        required: [true, 'Date cannot be blank']
     },
     notes: {
         type: String,
@@ -32,5 +31,4 @@ const workoutSchema = new mongoose.Schema({
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
-
-model.export = Workout;
+module.exports = Workout;
